@@ -1,9 +1,6 @@
 # Journey Into Django --- Basic Practice Projects 
 Basic django practice projects I did as I learn various django basic concepts. Just simple things
 
-# To check it live into action
-visit: https://hopgausi-todo.herokuapp.com/
-
 # To locally play with this on your machine
 Clone the repository\
 Create a virtual environment and activate it\
