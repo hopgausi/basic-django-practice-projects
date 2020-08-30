@@ -1,0 +1,12 @@
+{% extends 'fbv_todo/base.html' %}
+
+{% block content %}
+        <h4>[A To Do Item Details]</h4>
+        <p>Title: <span class="i"> {{ object.title}} </span> </p>
+        <p><strong><em>priority</em></strong>: <strong>{{ object.priority}}</strong> </p>
+        <p>Description: <span class="i"> {{ object.description }} </span> </p>
+        <a href="{% url 'todo:todo_complete' object.id %}" class="d">mark as completed</a>
+        <a href="{% url 'todo:todo_delete' object.id%}" class="dg">delete</a> 
+        <a href="{% url 'todo:todo_update' object.id%}">update</a>
+
+{% endblock content %}

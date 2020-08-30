@@ -1,0 +1,31 @@
+{% extends 'fbv_todo/base.html' %}
+{% load todo_tags %}
+{% block content %}
+    {% for object in object_list %}
+       <p> 
+            <strong>{{ forloop.counter}}.</strong> 
+            <a href="{% url 'todo:todo_detail' object.id %}">{{ object.title}}</a>
+             -----[<strong><em>priority</em></strong>: <strong>{{ object.priority}}</strong>] 
+
+            <a href="{% url 'todo:todo_delete' object.id%}" class="dg">delete</a>
+            {% if object.completed %}
+                 <a href="{% url 'todo:todo_complete' object.id %} " class="d">mark as incomplete</a>
+            {% else %}
+                <a href="{% url 'todo:todo_complete' object.id %} " class="d">mark as complete</a>
+            {% endif %}
+             
+        </p>
+    {% endfor %}
+    <a href="{% url 'todo:todo_create' %}" class="t">[Add a to-do item]</a>
+    {% if complete %}
+        <a href="{% url 'todo:todo_list' %}" class="t">
+            [Not completed({{ object_list|icount}})]
+        </a>
+    {% else %}
+        <a href="{% url 'todo:show_completed' %}" class="t">
+            [Completed({{ object_list|ccount}})]
+        </a>
+    {% endif %}
+    
+    
+{% endblock content %}

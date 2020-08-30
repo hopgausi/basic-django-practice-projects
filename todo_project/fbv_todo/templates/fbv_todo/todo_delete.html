@@ -1,0 +1,10 @@
+{% extends 'fbv_todo/base.html' %}
+
+{% block content %}
+    <p>Are you sure you want to delete <strong>{{object.title}}</strong>?</p>
+    <form action="{% url 'todo:todo_delete' object.id%}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="yes" class="dg">
+            <a href="{% url 'todo:todo_list' %}">no</a>
+    </form>
+{% endblock content %}

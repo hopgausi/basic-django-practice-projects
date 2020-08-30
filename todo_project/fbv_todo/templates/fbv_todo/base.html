@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+
+    <style>
+        nav{
+            margin:20px 15px;
+        }
+        a{
+            margin:3px;
+            padding:3px;
+            color:blue
+        }
+        .dg{
+            color:red;
+        }
+        .d{
+            color:green;
+        }
+        .t{
+            color:cyan;
+        }
+        .i{
+            color:skyblue;
+        }
+       hr{
+            margin:20px 5px 5px 5px;
+       }
+           
+       
+    </style>
+</head>
+<body>
+<nav><a href="{% url 'todo:todo_list' %}">Home</a></nav>
+<h1>BASIC TO DO APP </h1>
+    {% block content %}
+    {% endblock content %}
+<hr>
+<footer>
+    <p>Copyright &copy;2020, Hopson Gausi. </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'fbv_todo/base.html' %}
+
+{% block content %}
+{% for message in messages %}
+<p class="d">{{ message }}</p>
+{% endfor %}
+    <form action="{% url 'todo:todo_create'%}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add"> <a href="{% url 'todo:todo_list' %}">View todo items</a>
+    </form>
+{% endblock content %}
